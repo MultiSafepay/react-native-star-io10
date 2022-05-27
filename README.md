@@ -79,6 +79,11 @@ https://star-m.jp/eng/products/s_print/apple_app_mfi.html
 > :warning: In case of a Bluetooth Low Energy printer, you do not need to obtain this app approval.
 
 ### Android
+Add the snippet below to the `dependencies` block in android/app/build.gradle:
+
+```
+implementation files('../../node_modules/react-native-star-io10/android/src/lib/stario10.aar')
+```
 #### In case of setting targetSdkVersion to 31 or later
 Refer to [sample code](example/samples) and request BLUETOOTH_CONNECT permission before starting to communicate with or search for the printer.
 
