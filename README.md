@@ -22,11 +22,11 @@ Documentation includes an overview of the SDK, how to build a sample application
 
 ## Requirements
 
-| Platform | Version | Arch |
-| --- | --- | --- |
-| iOS | iOS 12.0 or later | Device: arm64<br> Simulator: x86_64, arm64 |
-| Android | Android 6.0 or later | arm64-v8a, armeabi-v7a, x86, x86_64 |
-| Windows | Windows 11 / Windows 10 1909 or later | x86, x64 |
+| Platform | Version                               | Arch                                       |
+| -------- | ------------------------------------- | ------------------------------------------ |
+| iOS      | iOS 12.0 or later                     | Device: arm64<br> Simulator: x86_64, arm64 |
+| Android  | Android 6.0 or later                  | arm64-v8a, armeabi-v7a, x86, x86_64        |
+| Windows  | Windows 11 / Windows 10 1909 or later | x86, x64                                   |
 
 ## Installation
 
@@ -35,18 +35,20 @@ npm install react-native-star-io10 --save
 ```
 
 ### iOS
+
 Some settings and approvals are required depending on the printer interface.  
 Please check the table below and take action.
 
-| Interface of the printer  | Necessary actions                                                                       |
-|---------------------------|-----------------------------------------------------------------------------------------|
+| Interface of the printer  | Necessary actions                                                                 |
+| ------------------------- | --------------------------------------------------------------------------------- |
 | Bluetooth                 | [1.](#SupportedEAProtocols) & [2.](#BluetoothAlwaysUsageDescription) & [4.](#MFi) |
-| Bluetooth Low Energy      | [2.](#BluetoothAlwaysUsageDescription)                                                |
-| Ethernet (iOS14 or later) | [3.](#LocalNetworkUsageDescription)                                                   |
-| Lightning USB             | [1.](#SupportedEAProtocols) & [4.](#MFi)                                            |
+| Bluetooth Low Energy      | [2.](#BluetoothAlwaysUsageDescription)                                            |
+| Ethernet (iOS14 or later) | [3.](#LocalNetworkUsageDescription)                                               |
+| Lightning USB             | [1.](#SupportedEAProtocols) & [4.](#MFi)                                          |
 
 <a id="SupportedEAProtocols"></a>
-#### 1. Set `Supported external accessory protocols` 
+
+#### 1. Set `Supported external accessory protocols`
 
 1. Click on the information property list file (default : “Info.plist”).
 2. Add the `Supported external accessory protocols` Key.
@@ -55,6 +57,7 @@ Please check the table below and take action.
 > :warning: If you do not use the printer concerned, do not configure this setting.
 
 <a id="BluetoothAlwaysUsageDescription"></a>
+
 #### 2. Set `Bluetooth Always Usage Description` and `Bluetooth Peripheral Usage Description`
 
 1. Click on the information property list file (default : “Info.plist”).
@@ -68,6 +71,7 @@ For more information, please refer to the following URL.
 https://developer.apple.com/documentation/bundleresources/information_property_list/nsbluetoothperipheralusagedescription
 
 <a id="LocalNetworkUsageDescription"></a>
+
 #### 3. Set `Local Network Usage Description`
 
 1. Click on the information property list file (default : “Info.plist”).
@@ -76,6 +80,7 @@ https://developer.apple.com/documentation/bundleresources/information_property_l
 4. When communicating with the Ethernet printer on iOS 14 or later, an alert requesting permission to access Local Network is displayed. The string set in Value is displayed in the alert as the reason for using Local Network.
 
 <a id="MFi"></a>
+
 #### 4. Apple Approval Process for STAR MFi Applications
 
 In order to offer your application that communicates a MFi certified printer on the Apple iTunes App Store, your application needs to be approved by the Apple MFi program before you submit it to the Apple iTunes App Store. Please follow the steps described in the URL below to obtain the app approval. This procedure must be completed before the app is reviewed by Apple.
@@ -96,7 +101,7 @@ Refer to [sample code](example/samples) and request BLUETOOTH_CONNECT permission
   - Private Networks (Client & Server)
 - Add "Visual C++ 2015-2019 UWP Desktop Runtime for native apps" to the project "References".
 
-## Limitations 
+## Limitations
 
 ### Cannot build for Windows x86
 
@@ -104,12 +109,12 @@ StarXpand SDK V1.3.0 using React Native for Windows V0.71.3 cannot be built for 
 
 ### When using Android device, an image specified by URL is sometimes printed in a low resolution
 
-In Android, when an image file size is large, and its URL is specified as the source of the ImageParameter which is the argument of the actionPrintImage method, the image may be printed in low resolution. 
+In Android, when an image file size is large, and its URL is specified as the source of the ImageParameter which is the argument of the actionPrintImage method, the image may be printed in low resolution.
 
-This can be solved by either of the following methods: 
+This can be solved by either of the following methods:
 
-- Reduce a file size of an image by lowering the resolution beforehand. 
-- Download an image in the app and specify the image file directly as the source. 
+- Reduce a file size of an image by lowering the resolution beforehand.
+- Download an image in the app and specify the image file directly as the source.
 
 ## Examples
 
@@ -132,6 +137,7 @@ Printing samples of labels (sample code and print results) for each type of busi
 #### 6. [Monitor printer](#MonitorPrinter)
 
 <a id="GetPrinterStatus"></a>
+
 ### Get printer status
 
 ```typescript
@@ -163,6 +169,7 @@ async getStatus(): Promise<void> {
 ```
 
 <a id="MonitorPrinter"></a>
+
 ### Monitor printer
 
 ```typescript
